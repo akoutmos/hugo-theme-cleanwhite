@@ -13,22 +13,22 @@
         <hr class="hidden-sm hidden-xs">
         <h5>FEATURED TAGS</h5>
         <div class="tags">
-            {{ $featured_condition_size := .Site.Params.featured_condition_size }} 
+            {{ $featured_condition_size := .Site.Params.featured_condition_size }}
             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-               {{ if gt (len $taxonomy.Pages) $featured_condition_size }} 
+               {{ if gt (len $taxonomy.Pages) $featured_condition_size }}
                     <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">
                         {{ $name }}
                     </a>
-               {{ end }} 
+               {{ end }}
             {{ end }}
         </div>
     </section>
     {{ end }}
 
     <!-- Short About -->
-	{{ if .Site.Params.about_me }}
+  {{ if .Site.Params.about_me }}
     <section class="visible-md visible-lg">
-	<hr><h5><a href="{{ "/top/about" | relLangURL }}">ABOUT ME</a></h5>
+  <hr><h5><a href="{{ "/top/about" | relLangURL }}">ABOUT ME</a></h5>
         <div class="short-about">
             {{ with .Site.Params.sidebar_avatar }}
             <a href="{{ "/top/about" | relLangURL }}">
@@ -39,7 +39,7 @@
                 <p>{{ . }}</p>
             {{ end }}
            <!-- SNS Link -->
-           <ul class="list-inline"> 
+           <ul class="list-inline">
                {{ if .Site.Params.social.rss }}
                <li>
                    <a href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" >
@@ -52,7 +52,7 @@
                {{ end }}
                {{ with .Site.Params.social.twitter }}
                <li>
-                   <a href="{{ . }}">
+                   <a target="_blank" href="{{ . }}">
                        <span class="fa-stack fa-lg">
                            <i class="fa fa-circle fa-stack-2x"></i>
                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -133,7 +133,7 @@
                 </ul>
             </div>
     </section>
-	{{ end }}
+  {{ end }}
     <!-- Friends Blog -->
     {{ if .Site.Params.friends }}
     <section>
