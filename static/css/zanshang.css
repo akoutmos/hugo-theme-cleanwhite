@@ -193,6 +193,7 @@ button.close {
   display: none;
 }
 
-table pre {
+table pre,
+table td {
   border: none !important;
 }
