@@ -182,6 +182,7 @@
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
+{{ if not .Site.IsServer }}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_analytics }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -190,3 +191,4 @@
 
   gtag('config', '{{ .Site.Params.google_analytics }}');
 </script>
+{{ end }}
